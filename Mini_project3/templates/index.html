@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Progno - demo mini-project Dashboard Template</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/assets/css/core.css">
+    <link rel="stylesheet" href="/static/assets/css/components.css">
+    <link rel="stylesheet" href="/static/assets/icons/fontawesome/styles.min.css">
+    <link rel="stylesheet" href="/static/lib/css/chartist.min.css">
+
+    <script type="text/javascript" src="/static/lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/lib/js/tether.min.js"></script>
+    <script type="text/javascript" src="/static/lib/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/static/lib/js/chartist.min.js"></script>
+    <script type="text/javascript" src="/static/assets/js/app.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // Dashboard Sales Chart
+            // ------------------------------------------------------------------
+
+            var dataMain = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                series: [
+                    [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
+                    [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
+                ]
+            };
+
+            var optionsMain = {
+                seriesBarDistance: 10
+            };
+
+            var responsiveOptionsMain = [
+                ['screen and (max-width: 640px)', {
+                    seriesBarDistance: 5,
+                    axisX: {
+                        labelInterpolationFnc: function (value) {
+                            return value[0];
+                        }
+                    }
+                }]
+            ];
+            var chart = new Chartist.Bar('.ct-chart-dashboard', dataMain, optionsMain, responsiveOptionsMain);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+            <span>
+                <i class="fa fa-code-fork"></i>
+            </span>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" id="toggle-sidebar">
+            <span>
+               <i class="fa fa-align-justify"></i>
+            </span>
+        </button>
+
+        <a class="navbar-brand logo" href="#">
+            <img src="/static/assets/img/logo.png" alt="Progno">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="sidebar-toggle btn btn-flat" id="toggle-sidebar-desktop">
+                <span>
+                    <i class="fa fa-align-justify"></i>
+                </span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  
+
+                    <div class="dropdown-menu dropdown-menu-right width-300 list-notifications">
+                        <ul class="list-unstyled">
+                            <li class="media notif-unread">
+                                You have 3 unread notifications!
+                            </li>
+                            <li class="media">
+                                <div class="notif-icon bg-primary-4">
+                                    <i class="fa fa-bell-o"></i>
+                                </div>
+                                <div class="media-body notif-text">
+                                    You may want to check this!
+                                </div>
+                            </li>
+                            <li class="media mr-2">
+                                <div class="notif-icon bg-danger-4">
+                                    <i class="fa fa-exclamation"></i>
+                                </div>
+                                <div class="media-body notif-text text-danger-4">
+                                    Server Banshee is not responding.
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="notif-icon bg-success-4">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <div class="media-body notif-text text-success-4">
+                                    Backup completed successfully.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+               
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-user"></i> <span>Profile</span></a>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-comment"></i> <span>Messages</span></a>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-cog"></i> <span>Settings</span></a>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-sign-out"></i> <span>Logout</span></a>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <div class="page-container">
+        <div class="page-content">
+            <!-- inject:SIDEBAR -->
+
+            <div id="sidebar-main" class="sidebar sidebar-default">
+    <div class="sidebar-content">
+        <ul class="navigation">
+            <li class="navigation-header">
+                <span>Main</span>
+                <i class="icon-menu"></i>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+            </li>
+
+            
+
+            
+
+            <li>
+                <a href="/table"><i class="fa fa-table"></i> <span>Tables</span></a>
+            </li>
+            <li>
+                <a href="/input/"><i class="fa fa-area-chart"></i> <span>Explore Shop</span></a>
+            </li>
+
+            <li>
+                <a href="/multinput/"><i class="fa fa-area-chart"></i> <span>Compare Shops</span></a>
+            </li>
+
+
+
+
+
+        </ul>
+    </div>
+</div>
+
+            <!-- inject:/SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="page-title">Dashboard Shop # {{ value2 }}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+						<div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-info-1">
+                                <div class="inner">
+                                    <h2>{{value1}}</h2>
+                                    <p>Week number</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-signal"></i>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+
+
+
+						
+						<div class="col-lg-3 col-xs-6">
+                            
+							<div class="widget-overview bg-primary-1">
+                                <div class="inner">
+                                    <h2>{{ value }}</h2>
+                                    <p>Forecasted sale</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-dollar"></i>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+
+                         <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-success-1">
+                                <div class="inner">
+                                    <h2>{{ value3 }}</h2>
+                                    <p>Average weekly sales</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-money"></i>
+                                </div>
+                            </div>
+                            </div>
+
+                        <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-info-1">
+                                <div class="inner">
+                                    <h2>{{value6}}</h2>
+                                    <p>Items per transaction</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-signal"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                           <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-success-1">
+                                <div class="inner">
+                                    <h2>{{ value4 }}</h2>
+                                    <p>Max sale</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-money"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-danger-1">
+                                <div class="inner">
+                                    <h2>{{ value5 }}</h2>
+                                    <p>Min sale</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-pie-chart"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+						 <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-danger-1">
+                                <div class="inner">
+                                    <h2>8,952</h2>
+                                    <p>Unique Visitors</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-pie-chart"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+						 <div class="col-lg-3 col-xs-6">
+                            <div class="widget-overview bg-danger-1">
+                                <div class="inner">
+                                    <h2>8,952</h2>
+                                    <p>Unique Visitors</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa fa-pie-chart"></i>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+                    <div class="row margin-top-10">
+                        {{ graph|safe }}
+                        {{ graph1|safe }}
+
+
+
+
+
+
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">Recent Products</h5>
+
+                                    <div class="recent-products">
+                                        <ul>
+                                            <li>
+                                                <div class="product-image">
+                                                    <img src="/static/assets/img/default-img.png" alt="">
+                                                </div>
+
+                                                <div class="product-info">
+                                                    <span class="product-title">
+                                                        <a href="#">Product Name</a>
+                                                        <span class="pull-right">
+                                                            <badge class="badge badge-primary">$1,800</badge>
+                                                            </span>
+                                                    </span>
+                                                    <span class="product-description">Product Description goes here.</span>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="product-image">
+                                                    <img src="/static/assets/img/default-img.png" alt="">
+                                                </div>
+
+                                                <div class="product-info">
+                                                    <span class="product-title">
+                                                        <a href="#">Product Name</a>
+                                                        <span class="pull-right">
+                                                            <badge class="badge badge-primary">$1,800</badge>
+                                                            </span>
+                                                    </span>
+                                                    <span class="product-description">Product Description goes here.</span>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="product-image">
+                                                    <img src="/static/assets/img/default-img.png" alt="">
+                                                </div>
+
+                                                <div class="product-info">
+                                                    <span class="product-title">
+                                                        <a href="#">Product Name</a>
+                                                        <span class="pull-right">
+                                                            <badge class="badge badge-primary">$1,800</badge>
+                                                            </span>
+                                                    </span>
+                                                    <span class="product-description">Product Description goes here.</span>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="product-image">
+                                                    <img src="/static/assets/img/default-img.png" alt="">
+                                                </div>
+
+                                                <div class="product-info">
+                                                    <span class="product-title">
+                                                        <a href="#">Product Name</a>
+                                                        <span class="pull-right">
+                                                            <badge class="badge badge-primary">$1,800</badge>
+                                                            </span>
+                                                    </span>
+                                                    <span class="product-description">Product Description goes here.</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">Recent Orders</h5>
+                                    <table class="table table-stripped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <td>#</td>
+                                                <td>Item</td>
+                                                <td>Status</td>
+                                                <td>Price</td>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="#">190</a></td>
+                                                <td>Item Name</td>
+                                                <td>
+                                                    <badge class="badge badge-warning">Pending</badge>
+                                                </td>
+                                                <td>
+                                                    $525
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">190</a></td>
+                                                <td>Item Name</td>
+                                                <td>
+                                                    <badge class="badge badge-success">Completed</badge>
+                                                </td>
+                                                <td>
+                                                    $525
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">190</a></td>
+                                                <td>Item Name</td>
+                                                <td>
+                                                    <badge class="badge badge-primary">Shipped</badge>
+                                                </td>
+                                                <td>
+                                                    $525
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">190</a></td>
+                                                <td>Item Name</td>
+                                                <td>
+                                                    <badge class="badge badge-danger">Cancelled</badge>
+                                                </td>
+                                                <td>
+                                                    $525
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>

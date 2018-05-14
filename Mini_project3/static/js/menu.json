@@ -1,0 +1,4 @@
+[
+		{ id:11, pId:0, name:"Dashboard",  click:false},
+		{ id:111, pId:11, name:"MainTable", t:"MainTable",page:"page_base_jichudangan.action"}
+]

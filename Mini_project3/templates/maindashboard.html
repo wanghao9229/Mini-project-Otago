@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>Dashboard</title>
+    <!-- 导入jquery核心类库 -->
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+    <!-- 导入easyui类库 -->
+    <link rel="stylesheet" type="text/css" href="/static/js/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/easyui/ext/portal.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/default.css">
+    <script type="text/javascript" src="/static/js/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/static/js/easyui/ext/jquery.portal.js"></script>
+    <script type="text/javascript" src="/static/js/easyui/ext/jquery.cookie.js"></script>
+    <script src="/static/js/easyui/locale/easyui-lang-en.js" type="text/javascript"></script>
+    <script type="text/javascript">
+  // 工具栏
+	var toolbar = [ {
+		id : 'button-view',	
+		text : 'Save Tab',
+		iconCls : 'icon-save',
+		handler : doDownload
+	}];
+
+		//定义冻结列
+	var frozenColumns = [ [ {
+		field : 'id',
+		checkbox : true,
+		rowspan : 2
+	} ] ];
+
+
+	// 定义标题栏
+	var columns = [ [ {
+		field : 'shop_id',
+		title : 'Shop ID',
+		width : 50,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '1',
+		title : 'Week1',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '2',
+		title : 'Week2',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '3',
+		title : 'Week3',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '4',
+		title : 'Week4',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '5',
+		title : 'Week5',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '6',
+		title : 'Week6',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '7',
+		title : 'Week7',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '8',
+		title : 'Week8',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '9',
+		title : 'Week9',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '10',
+		title : 'Week10',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '11',
+		title : 'Week11',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '12',
+		title : 'Week12',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '13',
+		title : 'Week13',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '14',
+		title : 'Week14',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '15',
+		title : 'Week15',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '16',
+		title : 'Week16',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '17',
+		title : 'Week17',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '18',
+		title : 'Week18',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '19',
+		title : 'Week19',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '20',
+		title : 'Week20',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '21',
+		title : 'Week21',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '22',
+		title : 'Week22',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '23',
+		title : 'Week23',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '24',
+		title : 'Week24',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '25',
+		title : 'Week25',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '26',
+		title : 'Week26',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '27',
+		title : 'Week27',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '28',
+		title : 'Week28',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '29',
+		title : 'Week29',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '30',
+		title : 'Week30',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '31',
+		title : 'Week31',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '32',
+		title : 'Week32',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '33',
+		title : 'Week33',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '34',
+		title : 'Week34',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '35',
+		title : 'Week35',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '36',
+		title : 'Week36',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '37',
+		title : 'Week37',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '38',
+		title : 'Week38',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '39',
+		title : 'Week39',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '40',
+		title : 'Week40',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '41',
+		title : 'Week41',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '42',
+		title : 'Week42',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '43',
+		title : 'Week43',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '44',
+		title : 'Week44',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '45',
+		title : 'Week45',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '46',
+		title : 'Week46',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '47',
+		title : 'Week47',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '48',
+		title : 'Week48',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '49',
+		title : 'Week49',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '50',
+		title : 'Week50',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '51',
+		title : 'Week51',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	}, {
+		field : '52',
+		title : 'Week52',
+		width : 70,
+		rowspan : 2,
+		align : 'center'
+	} ] ];
+	$(function(){
+		// 初始化 datagrid
+		// 创建grid
+		$('#grid').datagrid( {
+			iconCls : 'icon-forward',
+			fit : true,
+			border : false,
+			rownumbers : true,
+			striped : true,
+			pageList: [100],
+			pagination : true,
+			toolbar : toolbar,
+			url : "http://localhost:5000/tablejson",
+			idField : 'id', 
+			frozenColumns : frozenColumns,
+			columns : columns,
+			onClickRow : onClickRow,
+			onDblClickRow : doDblClickRow
+		});
+		
+	//	$("body").css({visibility:"visible"});
+		
+	});
+      // 双击
+	function doDblClickRow(rowIndex, rowData) {
+		var items = $('#grid').datagrid('selectRow',rowIndex);
+		doView();
+	}
+	// 单击
+	function onClickRow(rowIndex){
+
+	}
+  function doView() {
+		
+	}
+  function doDownload() {
+    alert('download')
+    location.href="http://localhost:5000/download/output.xlsx";
+	}    
+</script> </head>
+  <body class="easyui-layout">
+    <div region="center" border="false">
+      <table id="grid">
+      </table>
+    </div>
+    
+  </body>
+</html>
